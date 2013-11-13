@@ -1,0 +1,69 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="LandingDemo.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid>
+        <!--LayoutRoot is the root grid where all page content is placed-->
+        <Grid x:Name="VariantA" Visibility="Collapsed" Background="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Background="LightGray"></Grid>
+            <StackPanel Grid.Row="0" Margin="12,17,0,28">
+                <TextBlock Text="Vessel" Style="{StaticResource PhoneTextTitle2Style}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center">
+                <TextBlock Text="Welcome to Vessel A/B Demo" Style="{StaticResource PhoneTextTitle2Style}"/>
+                <TextBox Text="Email" />
+                <TextBox Text="Password" />
+                <Button Content="Sign up" Background="Gray" Foreground="Black"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="VariantB"
+              Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Background="LightGray"></Grid>
+            <StackPanel Grid.Row="0" Margin="12,17,0,28"
+                        >
+                <TextBlock Text="Vessel"
+                           Style="{StaticResource PhoneTextTitle2Style}"
+                           Foreground="Black"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center">
+                <TextBlock Text="Welcome to Vessel A/B Demo"
+                           Style="{StaticResource PhoneTextTitle2Style}"
+                           Foreground="Black"
+                           Margin="10,10,10,40"/>
+                <Button Content="Sign up with Facebook" Background="RoyalBlue"
+                        Click="Button_Click"/>
+                <Button Content="Sign up with G+" Background="Tomato"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
